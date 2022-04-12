@@ -8,9 +8,13 @@ public class Huevo : MonoBehaviour
     [SerializeField] private Animator animator = null;
     [SerializeField] private GameObject recogerP = null;
     int Contador = 0;
+    [SerializeField] Button BtnContinuar;
+    void Start()
+    {
+        BtnContinuar.interactable = false;
+    }
     private void OnMouseDown()
     {
-
             Contador++;
 
             switch (Contador)
@@ -26,6 +30,7 @@ public class Huevo : MonoBehaviour
                 case 3:
                     animator.SetTrigger("isOpen3");
                     StartCoroutine(WaitThenLoad());
+                    BtnContinuar.interactable = true;
                     break;
             }
     }
