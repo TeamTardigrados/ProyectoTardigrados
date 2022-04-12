@@ -6,6 +6,48 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Escenas/Inicio.unity
+    guid: 9f99bcaf979d11043b6f11d063fe65fe
+  - enabled: 1
+    path: Assets/Escenas/Evento 1-Botones.unity
+    guid: 968ad2b79d805b340a336862b88e3f40
+  - enabled: 1
+    path: Assets/Escenas/Evento 2.unity
+    guid: 9d4566b7f838d7145984a940c66847f5
+  - enabled: 1
+    path: Assets/Escenas/Evento 2-Botones.unity
+    guid: 2bb7bffee3cf832409711f7f93e061e6
+  - enabled: 1
+    path: Assets/Escenas/Evento 3.unity
+    guid: 7b23af1050238f745b19b1cc7b370c78
+  - enabled: 1
+    path: Assets/Escenas/Evento 3-Botones.unity
+    guid: 30cccf8c029a1be41aaaf463ecc38d10
+  - enabled: 1
+    path: Assets/Escenas/Evento 4.unity
+    guid: 4f155ac61ed779348ac69bfa89287afe
+  - enabled: 1
+    path: Assets/Escenas/Evento 4-Botones.unity
+    guid: 242242fa0113c3243b59325cdca1adc5
+  - enabled: 1
+    path: Assets/Escenas/Evento 5.unity
+    guid: 55c2e1e03339b5b41b7d6ec69c6b6d8d
+  - enabled: 1
+    path: Assets/Escenas/Evento 5-Botones.unity
+    guid: c3633df765729fa4c9c9299706c77829
+  - enabled: 1
+    path: Assets/Escenas/GraciasPorJugar.unity
+    guid: aac166b4516c46d47a4dffbfd1664091
+  - enabled: 1
+    path: Assets/Escenas/Final.unity
+    guid: 00e1bdb29d7fd9a48bbb224634f4c5c6
+  - enabled: 1
+    path: Assets/Escenas/Creditos.unity
+    guid: 77e47ec4e5a632e4bbdb542d825260c0
+  - enabled: 1
+    path: Assets/Escenas/Creditos1.unity
+    guid: c8c87821cc9b6c241a2c360d0f7a7610
+  - enabled: 1
+    path: Assets/Escenas/Creditos2.unity
+    guid: 7f536c4ff9652c64680c9b75b908f8bd
   m_configObjects: {}

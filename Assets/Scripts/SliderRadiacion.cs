@@ -7,8 +7,8 @@ public class SliderRadiacion : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer Fondo = null;
     [SerializeField] private Slider sliderRadiacion = null;
-    [SerializeField]  ParticleSystem radiacion;
-    //public GameObject SpaceBackground;
+    [SerializeField] ParticleSystem radiacion;
+    public GameObject SpaceBackground;
     public Text estadisticaRadiacion;
     private void Awake()
     {
