@@ -23,7 +23,7 @@ public class Humedad2 : MonoBehaviour
         {
             humedad = 0f;
         }
-        if (sliderTemperatura.temperaturaActual >= 0.8f)
+        if (sliderTemperatura.temperaturaActual >= 0.8f || sliderTemperatura.temperaturaActual<= 0.2f)
         {
             humedad -= 4f * Time.deltaTime;
         }

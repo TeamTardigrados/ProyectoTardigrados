@@ -2899,6 +2899,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 7420061372685295431, guid: 4798634e4cbb16a418c5dc0b44914a5f, type: 3}
+      propertyPath: m_Value
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4798634e4cbb16a418c5dc0b44914a5f, type: 3}
 --- !u!224 &994255040 stripped
@@ -5596,10 +5600,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Humedad: {fileID: 2072006956}
+  contadorHumedadAcabada: 0
   interfaz_Controller: {fileID: 1034288272}
   sliderRadiacion: {fileID: 668161801}
   contadorTemperaturaBaja: 0
-  contadorTemperaturaSube: 0
   mision1Cumplida: {fileID: 555551487}
   mision2Cumplida: {fileID: 555551487}
   mision3Cumplida: {fileID: 555551487}

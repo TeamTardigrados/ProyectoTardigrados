@@ -739,8 +739,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Baja la temperatura y deja que el tard\xEDgrado entre en criptobiosis
-    3 segundos"
+  m_text: Baja la temperatura durante 3 segundos.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1611,6 +1610,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: 7420061372685295431, guid: 4798634e4cbb16a418c5dc0b44914a5f, type: 3}
+      propertyPath: m_Value
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7420061372804250033, guid: 4798634e4cbb16a418c5dc0b44914a5f, type: 3}
       propertyPath: m_SizeDelta.x
       value: -61.8624
@@ -2356,10 +2359,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Humedad: {fileID: 1081573627}
+  contadorHumedadAcabada: 0
   interfaz_Controller: {fileID: 691498471}
   sliderRadiacion: {fileID: 668161801}
   contadorTemperaturaBaja: 0
-  contadorTemperaturaSube: 0
   mision1Cumplida: {fileID: 1946732779}
   mision2Cumplida: {fileID: 1946732779}
   mision3Cumplida: {fileID: 1946732779}
@@ -5917,7 +5920,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Sube la temperatura y deja que el tard\xEDgrado entre en criptobiosis
-    3 veces "
+    2 veces "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

@@ -10,7 +10,6 @@ public class Mision : MonoBehaviour
 
     [SerializeField] Humedad Humedad;
     float criptobiosisTimer = 0;
-    float criptobiosisTimerMax = 100f;
     float humedadCambiante = 0;
     float humedadAnterior = 0;
     float humedad=0;
@@ -29,10 +28,6 @@ public class Mision : MonoBehaviour
     [SerializeField] int contadorTemperaturaBaja=0; //variables para contar tiempo para la mision numero 1 (logica)
     float temperaturaBajaTimer =0; //variables para contar tiempo para la mision numero 1 (logica)
     float temperaturaBajaTimerMax = 0.5f; //variables para contar tiempo para la mision numero 1 (logica)
-
-    [SerializeField] int contadorTemperaturaSube= 0; 
-    float temperaturaSubeTimer = 0; 
-    float temperaturaSubeTimerMax = 0.5f;
 
     //Timers
     float bajarTemperaturaTimer = 0;
@@ -71,10 +66,9 @@ public class Mision : MonoBehaviour
             ActualizarTemperatura();
             HumedadCambiante();
             TemperaturaCambiante();
-            CriptobiosisDosVeces();
+            BajaTemperaturaCriptobiosis();
             BajaTempertauraTresVeces();
-            CriptobiosisTresVeces();
-
+            SubeTemperaturaCriptobiosis();
             ActualizarRadicion();
             RadiacionCambiante();
             
@@ -107,7 +101,8 @@ public class Mision : MonoBehaviour
     }
 
 
-    //Misiones Evento 2
+
+    //MISIONES EVENTO 2
 
     // 1. Tardi el Heladero
     void BajaTempertauraTresVeces() 
@@ -147,18 +142,21 @@ public class Mision : MonoBehaviour
     }
 
     // 3. Estado crítico
-    void CriptobiosisDosVeces()  
+    void BajaTemperaturaCriptobiosis()  
     {
-        criptobiosisTimer += Time.deltaTime;
-        if (Humedad.humedad <= 1 && criptobiosisTimer > 0.5f)
+        if(temperatura <= -60)
         {
-            if (humedadCambiante != 0)
+            criptobiosisTimer += Time.deltaTime;
+            if (Humedad.humedad <= 1 && criptobiosisTimer > 0.5f)
             {
-                contadorHumedadAcabada++;
-                criptobiosisTimer = 0;
+                if (humedadCambiante != 0)
+                {
+                    contadorHumedadAcabada++;
+                    criptobiosisTimer = 0;
+                }
             }
-        }
-        if (contadorHumedadAcabada == 2) mision3Cumplida.SetActive(true);      
+            if (contadorHumedadAcabada == 2) mision3Cumplida.SetActive(true);
+        }   
     }
     void HumedadCambiante()
     {
@@ -168,21 +166,26 @@ public class Mision : MonoBehaviour
     }
 
 
-    //Misiones evento 3
+
+    //MISIONES EVENTO 3
 
     // 4. Tropi-Tardigrado
-    void CriptobiosisTresVeces()
-    {
-        criptobiosisTimer += Time.deltaTime;
-        if (Humedad.humedad <= 1 && criptobiosisTimer > 0.5f)
+    void SubeTemperaturaCriptobiosis()
+    { 
+        if(temperatura >= 60)
         {
-            if (humedadCambiante != 0)
+            criptobiosisTimer += Time.deltaTime;
+            if (Humedad.humedad <= 1 && criptobiosisTimer > 0.5f )
             {
-                contadorHumedadAcabada++;
-                criptobiosisTimer = 0;
+                if (humedadCambiante != 0)
+                {
+                    contadorHumedadAcabada++;
+                    criptobiosisTimer = 0;
+                }
             }
+            if (contadorHumedadAcabada == 2) mision4Cumplida.SetActive(true);
         }
-        if (contadorHumedadAcabada == 3) mision3Cumplida.SetActive(true);
+      
     }
 
     // 5. Hidratación Controlada
@@ -209,7 +212,8 @@ public class Mision : MonoBehaviour
     }
 
 
-    //Misiones evento 4
+
+    //MISIONES EVENTO 4
 
     // 7. Experto en los elementos
     void RadiacionCambiante()
@@ -253,6 +257,7 @@ public class Mision : MonoBehaviour
             }
         }
     }
+
 
 
     //Desbloqueo de botón de paso de escena cuando se completan las misiones
