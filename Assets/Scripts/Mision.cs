@@ -9,6 +9,12 @@ public class Mision : MonoBehaviour
     bool estaAbierto=false;
 
     [SerializeField] Humedad Humedad;
+    float criptobiosisTimer = 0;
+    float criptobiosisTimerMax = 100f;
+    float humedadCambiante = 0;
+    float humedadAnterior = 0;
+    float humedad=0;
+    [SerializeField] int contadorHumedadAcabada = 0;
 
     [SerializeField] Interfaz_controller interfaz_Controller;
     float temperatura=0;
@@ -64,8 +70,9 @@ public class Mision : MonoBehaviour
         AbrirCuadroMisiones();
         if (estaAbierto == true)
         {
-            
+            ActualizarHumedad();
             ActualizarTemperatura();
+            HumedadCambiante();
             TemperaturaCambiante();
             BajarTresVecesTemperatura();
             AgotarAguaTardigrado();
@@ -91,6 +98,11 @@ public class Mision : MonoBehaviour
         temperatura = float.Parse(interfaz_Controller.estadisticaTemperatura.text);
         //Debug.Log("temperatura normal  " + temperatura);
     }
+    void ActualizarHumedad()
+    {
+        humedad = float.Parse(Humedad.estaditicaHumedad.text);
+        //Debug.Log("humedad normal  " + humedad);
+    }
     void ActualizarRadicion()
     {
         radiacion = float.Parse(sliderRadiacion.estadisticaRadiacion.text);
@@ -99,23 +111,41 @@ public class Mision : MonoBehaviour
 
 
     //Misiones Evento 2
-    void BajarTresVecesTemperatura()
+    void BajarTresVecesTemperatura()  //Criptobiosis
     {
-        temperaturaBajaTimer += Time.deltaTime;
-        if (temperatura <= -80 && temperaturaBajaTimer > temperaturaBajaTimerMax)
-        {
-            if (temperaturaCambiante!=0)
+            criptobiosisTimer += Time.deltaTime;
+            if (Humedad.humedad <= 1 && criptobiosisTimer > 0.5f)
             {
-                contadorTemperaturaBaja++;
-                temperaturaBajaTimer = 0;
+                if (humedadCambiante != 0)
+                {
+                    contadorHumedadAcabada++;
+                    criptobiosisTimer = 0;
+                }
             }
-        }
-        if (contadorTemperaturaBaja == 3) mision1Cumplida.SetActive(true); 
+            if (contadorHumedadAcabada == 3) mision1Cumplida.SetActive(true);
+        
+
+        //temperaturaBajaTimer += Time.deltaTime;
+        //if (temperatura <= -80 && temperaturaBajaTimer > temperaturaBajaTimerMax)
+        //{
+        //    if (temperaturaCambiante != 0)
+        //    {
+        //        contadorTemperaturaBaja++;
+        //        temperaturaBajaTimer = 0;
+        //    }
+        //}
+        //if (contadorTemperaturaBaja == 3) mision1Cumplida.SetActive(true);
     }
     void TemperaturaCambiante()
     {
         temperaturaCambiante = temperatura - temperaturaAnterior;
         temperaturaAnterior = temperatura;
+        //Debug.Log("cambio de temperatura " + temperaturaCambiante);
+    }
+    void HumedadCambiante()
+    {
+        humedadCambiante = humedad - humedadAnterior;
+        humedadAnterior = humedad;
         //Debug.Log("cambio de temperatura " + temperaturaCambiante);
     }
     void Hidratar5Veces()
