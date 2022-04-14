@@ -49,13 +49,10 @@ public class Mision : MonoBehaviour
     [SerializeField] GameObject mision7Cumplida;
     [SerializeField] GameObject mision8Cumplida;
     [SerializeField] GameObject mision9Cumplida;
-    //Mision 2 logica
+    
     public int contadorHidratacion = 0;
 
-    //Misiones Evento completadas
     [SerializeField] Button BtnContinuar;
-    
-    //[SerializeField ]private  BloqueoBotones bloqueo;
     
     void Start()
     {
@@ -74,9 +71,9 @@ public class Mision : MonoBehaviour
             ActualizarTemperatura();
             HumedadCambiante();
             TemperaturaCambiante();
-            BajarTresVecesTemperatura();
-            AgotarAguaTardigrado();
-            SubirTresVecesTemperatura();
+            CriptobiosisDosVeces();
+            BajaTempertauraTresVeces();
+            CriptobiosisTresVeces();
 
             ActualizarRadicion();
             RadiacionCambiante();
@@ -111,30 +108,20 @@ public class Mision : MonoBehaviour
 
 
     //Misiones Evento 2
-    void BajarTresVecesTemperatura()  //Criptobiosis
-    {
-            criptobiosisTimer += Time.deltaTime;
-            if (Humedad.humedad <= 1 && criptobiosisTimer > 0.5f)
-            {
-                if (humedadCambiante != 0)
-                {
-                    contadorHumedadAcabada++;
-                    criptobiosisTimer = 0;
-                }
-            }
-            if (contadorHumedadAcabada == 3) mision1Cumplida.SetActive(true);
-        
 
-        //temperaturaBajaTimer += Time.deltaTime;
-        //if (temperatura <= -80 && temperaturaBajaTimer > temperaturaBajaTimerMax)
-        //{
-        //    if (temperaturaCambiante != 0)
-        //    {
-        //        contadorTemperaturaBaja++;
-        //        temperaturaBajaTimer = 0;
-        //    }
-        //}
-        //if (contadorTemperaturaBaja == 3) mision1Cumplida.SetActive(true);
+    // 1. Tardi el Heladero
+    void BajaTempertauraTresVeces() 
+    {
+        temperaturaBajaTimer += Time.deltaTime;
+        if (temperatura <= -80 && temperaturaBajaTimer > temperaturaBajaTimerMax)
+        {
+            if (temperaturaCambiante != 0)
+            {
+                contadorTemperaturaBaja++;
+                temperaturaBajaTimer = 0;
+            }
+        }
+        if (contadorTemperaturaBaja == 3) mision1Cumplida.SetActive(true);
     }
     void TemperaturaCambiante()
     {
@@ -142,60 +129,73 @@ public class Mision : MonoBehaviour
         temperaturaAnterior = temperatura;
         //Debug.Log("cambio de temperatura " + temperaturaCambiante);
     }
+
+    // 2. Lluvia
+    void Hidratar5Veces() 
+    {
+        if (contadorHidratacion >= 5)
+        {
+            mision2Cumplida.SetActive(true);
+        }
+    }
+    public void AgregarUnoContadorHidratar()
+    {
+        if (contadorHidratacion < 5)
+        {
+            contadorHidratacion++;
+        }
+    }
+
+    // 3. Estado crítico
+    void CriptobiosisDosVeces()  
+    {
+        criptobiosisTimer += Time.deltaTime;
+        if (Humedad.humedad <= 1 && criptobiosisTimer > 0.5f)
+        {
+            if (humedadCambiante != 0)
+            {
+                contadorHumedadAcabada++;
+                criptobiosisTimer = 0;
+            }
+        }
+        if (contadorHumedadAcabada == 2) mision3Cumplida.SetActive(true);      
+    }
     void HumedadCambiante()
     {
         humedadCambiante = humedad - humedadAnterior;
         humedadAnterior = humedad;
         //Debug.Log("cambio de temperatura " + temperaturaCambiante);
     }
-    void Hidratar5Veces()
-    {
-        if (contadorHidratacion >= 5)
-        {
-            mision2Cumplida.SetActive(true); 
-        }
-    }
-    public void AgregarUnoContadorHidratar()
-    {
-        if (contadorHidratacion<5)
-        {
-            contadorHidratacion++;
-        }  
-    }
-    void AgotarAguaTardigrado()
-    {
-        if(Humedad.humedad <= 0f)
-        {
-            mision3Cumplida.SetActive(true);
-            
-        }
-    }
 
 
     //Misiones evento 3
-    void SubirTresVecesTemperatura()
+
+    // 4. Tropi-Tardigrado
+    void CriptobiosisTresVeces()
     {
-        temperaturaSubeTimer += Time.deltaTime;
-        if (temperatura >= 80 && temperaturaSubeTimer > temperaturaSubeTimerMax)
+        criptobiosisTimer += Time.deltaTime;
+        if (Humedad.humedad <= 1 && criptobiosisTimer > 0.5f)
         {
-            if (temperaturaCambiante != 0)
+            if (humedadCambiante != 0)
             {
-                contadorTemperaturaSube++;
-                temperaturaSubeTimer = 0;
+                contadorHumedadAcabada++;
+                criptobiosisTimer = 0;
             }
         }
-        if (contadorTemperaturaSube == 3) mision4Cumplida.SetActive(true);
-
+        if (contadorHumedadAcabada == 3) mision3Cumplida.SetActive(true);
     }
+
+    // 5. Hidratación Controlada
     public void DetectarHidratacion40a50()
     {
         Debug.Log("se invoco funcion detectarHidartacion40a50");
         if(Humedad.humedad >= 40f && Humedad.humedad <= 50f) 
         {
             mision5Cumplida.SetActive(true);
-        }
-        
+        }   
     }
+
+    // 6. ¿Frío? ¿En el Serengueti?
     void BajarLaTemperatura()
     {
         if (temperatura <= -80 && !mision6Cumplida.activeSelf)
@@ -210,6 +210,8 @@ public class Mision : MonoBehaviour
 
 
     //Misiones evento 4
+
+    // 7. Experto en los elementos
     void RadiacionCambiante()
     {
         radiacionCambiante = radiacion - radiacionAnterior;
@@ -228,6 +230,8 @@ public class Mision : MonoBehaviour
             }
         }
     }
+
+    // 8. ¡Emergencia!
     public void RehidratarTradigrado()
     {
         if (Humedad.humedad <= 20f)
@@ -235,6 +239,8 @@ public class Mision : MonoBehaviour
             mision8Cumplida.SetActive(true);
         }
     }
+
+    // 9. Invierno nuclear
     void DisminuyeRadiacionyTemperatura()
     {
         if (radiacion >= 99 && temperatura <= -80)
@@ -248,6 +254,8 @@ public class Mision : MonoBehaviour
         }
     }
 
+
+    //Desbloqueo de botón de paso de escena cuando se completan las misiones
     void PasoDeEvento()
     {  //Evento 2
         if (mision1Cumplida.activeSelf==true && mision2Cumplida.activeSelf==true && mision3Cumplida.activeSelf == true)
