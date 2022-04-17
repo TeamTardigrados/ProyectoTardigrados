@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 16c62255fa93a794fb76a0eaf64c09b5
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Alone On Earth
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: bea648d6ddda811489b178cf7cca02de, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
