@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class Humedad : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class Humedad : MonoBehaviour
     [SerializeField] float maxHumedad = 100f;
     public Text estaditicaHumedad;
     [SerializeField] Interfaz_controller sliderTemperatura;
-
+    public Action OnWaterEnd;
+    public Action OnGetWater;
     //Referencias
     [SerializeField] Mision mision1;
     [SerializeField] Mision mision2;
@@ -30,6 +32,10 @@ public class Humedad : MonoBehaviour
         if (sliderTemperatura.temperaturaActual >= 0.8f || sliderTemperatura.temperaturaActual <= 0.2f)
         {
             humedad -= 4f * Time.deltaTime;
+            if (humedad <= 0 )
+            {
+                OnWaterEnd?.Invoke();
+            }
         }
       
         estaditicaHumedad.text = ((int)humedad).ToString();
@@ -37,6 +43,7 @@ public class Humedad : MonoBehaviour
     
     public void AumentoHumedad()
     {
+        OnGetWater?.Invoke();
         mision1.DetectarHidratacion40a50();
         mision2.RehidratarTradigrado();
         humedad = maxHumedad;
