@@ -143,11 +143,9 @@ public class Mision : MonoBehaviour
 
     // 3. Estado crítico
     void BajaTemperaturaCriptobiosis()  
-    {
-        if(temperatura <= -60)
-        {
+    {         
             criptobiosisTimer += Time.deltaTime;
-            if (Humedad.humedad <= 1 && criptobiosisTimer > 0.5f)
+            if (temperatura <= -60 && Humedad.humedad <= 1 && criptobiosisTimer > 0.5f)
             {
                 if (humedadCambiante != 0)
                 {
@@ -155,8 +153,8 @@ public class Mision : MonoBehaviour
                     criptobiosisTimer = 0;
                 }
             }
-            if (contadorHumedadAcabada == 2) mision3Cumplida.SetActive(true);
-        }   
+
+            if (contadorHumedadAcabada == 2) mision3Cumplida.SetActive(true);         
     }
     void HumedadCambiante()
     {
