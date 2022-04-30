@@ -10,21 +10,25 @@ public class Texto : MonoBehaviour
     [SerializeField] private TMP_Text dialogueText = null;
     [SerializeField] private int lineIndex = 0;
     [SerializeField] private int lineTemp = 0;
+    [SerializeField] private int charsToPlays = 0;
+    [SerializeField] private float typingTime = 0f;
     [SerializeField, TextArea(4, 6)] private string[] dialogueLines = null;
-    private float typingTime = 0.02f;
+    
     private bool didDialogueStart = false;
+    private SoundManager soundManager;
 
     public int LineTemp { get => lineTemp; set => lineTemp = value; }
 
-    private void Start()
+    private void Awake()
     {
-        //dialogueButton.onClick.AddListener(HandleClick);
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     public void StartDialogue()
     {
         lineIndex = lineTemp;
         StartCoroutine(ShowLine());
+        soundManager.SeleccionAudio(5, 0.5f);
         didDialogueStart = true;
         dialoguePanel.SetActive(true);
     }
@@ -49,6 +53,7 @@ public class Texto : MonoBehaviour
     public void NextDialogueLine()
     {
         lineIndex++;
+        soundManager.SeleccionAudio(5, 0.5f);
         if (lineIndex < dialogueLines.Length)
         {
             StartCoroutine(ShowLine());
@@ -63,6 +68,7 @@ public class Texto : MonoBehaviour
     public void BackDialogueLine()
     {
         lineIndex--;
+        soundManager.SeleccionAudio(5, 0.5f);
         if (lineIndex >= 0)
         {
             StartCoroutine(ShowLine());
@@ -78,6 +84,7 @@ public class Texto : MonoBehaviour
     {
         lineTemp = lineIndex;
         StopAllCoroutines();
+        soundManager.SeleccionAudio(5, 0.5f);
         dialogueText.text = dialogueLines[lineIndex];
         dialogueButton.interactable = true;
     }
@@ -85,9 +92,16 @@ public class Texto : MonoBehaviour
     private IEnumerator ShowLine()
     {
         dialogueText.text = string.Empty;
+        int charIndex = 0;
         foreach (char ch in dialogueLines[lineIndex])
         {
             dialogueText.text += ch;
+            if(charIndex % charsToPlays == 0)
+            {
+                soundManager.SeleccionAudio(6, 0.05f);
+            }
+            
+            charIndex++;
             yield return new WaitForSeconds(typingTime);
         }
     }
