@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 4379190554932580247}
   - component: {fileID: 4379190554932580246}
   m_Layer: 5
-  m_Name: Recoger Pieza del cohete
+  m_Name: Collect Piece
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4379190554932580233
 RectTransform:
   m_ObjectHideFlags: 0

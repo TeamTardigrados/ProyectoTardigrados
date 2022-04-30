@@ -6,21 +6,26 @@ using UnityEngine.UI;
 public class Huevo : MonoBehaviour
 {
     [SerializeField] private Animator animator = null;
-    [SerializeField] private GameObject recogerP = null;
-    int Contador = 0;
-    [SerializeField] Button BtnContinuar;
+    [SerializeField] private GameObject collectPiece = null;
+    [SerializeField] private Texto dialoguePanel = null;
+    [SerializeField] private Button btnContinue = null;
+    [SerializeField] private float waitTimeBrokenEgg = 10f;
+
+    private int counter = 0;
+
     void Start()
     {
-        BtnContinuar.interactable = false;
+        btnContinue.interactable = false;
     }
     private void OnMouseDown()
     {
-            Contador++;
+            counter++;
 
-            switch (Contador)
+            switch (counter)
             {
                 case 1:
                     animator.SetTrigger("isOpen1");
+                    dialoguePanel.CloseDialogue();
                     break;
 
                 case 2:
@@ -30,14 +35,16 @@ public class Huevo : MonoBehaviour
                 case 3:
                     animator.SetTrigger("isOpen3");
                     StartCoroutine(WaitThenLoad());
-                    BtnContinuar.interactable = true;
+                    btnContinue.interactable = true;
                     break;
             }
     }
    
     private IEnumerator WaitThenLoad()
     {
-        yield return new WaitForSecondsRealtime(2f);
-        recogerP.SetActive(true);
+        yield return new WaitForSecondsRealtime(waitTimeBrokenEgg);
+        collectPiece.SetActive(true);
+        dialoguePanel.LineTemp = 2;
+        dialoguePanel.StartDialogue();
     }
 }
