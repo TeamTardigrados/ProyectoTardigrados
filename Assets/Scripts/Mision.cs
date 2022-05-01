@@ -51,8 +51,8 @@ public class Mision : MonoBehaviour
 
     //Recoger piezas del cohete
     [SerializeField] private GameObject recogerA = null;
-    [SerializeField] private GameObject recogerB = null;
-    [SerializeField] private GameObject recogerC = null;
+    //[SerializeField] private GameObject recogerB = null;
+    //[SerializeField] private GameObject recogerC = null;
     void Start()
     {
         BtnContinuar.interactable = false;
@@ -277,7 +277,7 @@ public class Mision : MonoBehaviour
         //Evento 3
         if (mision3Cumplida.activeSelf == true && mision4Cumplida.activeSelf == true && mision5Cumplida.activeSelf == true)
         {
-            StartCoroutine(WaitThenLoad());
+            //StartCoroutine(WaitThenLoad());
             BtnContinuar.interactable = true;
         }
         else
@@ -287,7 +287,7 @@ public class Mision : MonoBehaviour
         //Evento 4
         if (mision6Cumplida.activeSelf == true && mision7Cumplida.activeSelf == true && mision8Cumplida.activeSelf == true)
         {
-            StartCoroutine(WaitThenLoad());
+            //StartCoroutine(WaitThenLoad());
             BtnContinuar.interactable = true;
         }
         else
@@ -299,14 +299,6 @@ public class Mision : MonoBehaviour
     private IEnumerator WaitThenLoad()
     {
         yield return new WaitForSecondsRealtime(3f);
-        recogerA.SetActive(true);
-
-        yield return new WaitForSecondsRealtime(3f);
-        recogerB.SetActive(true);
-
-        yield return new WaitForSecondsRealtime(3f);
-        recogerC.SetActive(true);
-
-
+            recogerA.SetActive(true);
     }
 }
