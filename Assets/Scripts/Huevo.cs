@@ -37,7 +37,7 @@ public class Huevo : MonoBehaviour
    
     private IEnumerator WaitThenLoad()
     {
-        yield return new WaitForSecondsRealtime(2f);
+        yield return new WaitForSecondsRealtime(10f);
         recogerP.SetActive(true);
     }
 }
