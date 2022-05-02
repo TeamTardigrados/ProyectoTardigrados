@@ -1506,6 +1506,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Recoger Pieza del cohete
       objectReference: {fileID: 0}
+    - target: {fileID: 4379190554932580232, guid: 2e8d1130ed392104995b41ecacdc9f6b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4379190554932580233, guid: 2e8d1130ed392104995b41ecacdc9f6b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2046,7 +2050,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4425998481791483633, guid: 8f6d33cd6a889d747b7e51e895cd4e3a, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f6d33cd6a889d747b7e51e895cd4e3a, type: 3}
