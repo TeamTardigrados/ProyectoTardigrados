@@ -48,9 +48,17 @@ public class Mision : MonoBehaviour
     public int contadorHidratacion = 0;
 
     [SerializeField] Button BtnContinuar;
+<<<<<<< HEAD
     //Audio del juego 
     //private SoundManager soundManager;
 
+=======
+
+    //Recoger piezas del cohete
+    [SerializeField] private GameObject recogerA = null;
+    [SerializeField] private GameObject recogerB = null;
+    [SerializeField] private GameObject recogerC = null;
+>>>>>>> origin/Sebas-Velasquez
     void Start()
     {
         BtnContinuar.interactable = false;
@@ -262,34 +270,49 @@ public class Mision : MonoBehaviour
 
 
     //Desbloqueo de botón de paso de escena cuando se completan las misiones
+    bool flagEvento2 = true;
+    bool flagEvento3 = true;
+    bool flagEvento4 = true;
     void PasoDeEvento()
     {  //Evento 2
-        if (mision1Cumplida.activeSelf==true && mision2Cumplida.activeSelf==true && mision3Cumplida.activeSelf == true)
+        if (mision1Cumplida.activeSelf==true && mision2Cumplida.activeSelf==true && mision3Cumplida.activeSelf == true && flagEvento2)
         {
+            StartCoroutine(WaitThenLoadEvento2());
             BtnContinuar.interactable = true;
+            flagEvento2 = false;
         }
-        else
-        {
-            BtnContinuar.interactable = false;
-        }
+       
         //Evento 3
-        if (mision3Cumplida.activeSelf == true && mision4Cumplida.activeSelf == true && mision5Cumplida.activeSelf == true)
+        if (mision3Cumplida.activeSelf == true && mision4Cumplida.activeSelf == true && mision5Cumplida.activeSelf == true && flagEvento3)
         {
+            StartCoroutine(WaitThenLoadEvento3());
             BtnContinuar.interactable = true;
+            flagEvento3 = false;
         }
-        else
-        {
-            BtnContinuar.interactable = false;
-        }
+       
         //Evento 4
-        if (mision6Cumplida.activeSelf == true && mision7Cumplida.activeSelf == true && mision8Cumplida.activeSelf == true)
+        if (mision6Cumplida.activeSelf == true && mision7Cumplida.activeSelf == true && mision8Cumplida.activeSelf == true && flagEvento4)
         {
+            StartCoroutine(WaitThenLoadEvento4());
             BtnContinuar.interactable = true;
-        }
-        else
-        {
-            BtnContinuar.interactable = false;
+            flagEvento4 = false;
         }
     }
-  
+
+    private IEnumerator WaitThenLoadEvento2()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+            recogerA.SetActive(true);
+    }
+    private IEnumerator WaitThenLoadEvento3()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        recogerB.SetActive(true);
+    }
+
+    private IEnumerator WaitThenLoadEvento4()
+    {
+        yield return new WaitForSecondsRealtime(3f);
+        recogerC.SetActive(true);
+    }
 }
