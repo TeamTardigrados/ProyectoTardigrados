@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class BotonesEscenas : MonoBehaviour
 {
     //BOTONES-SLIDERS
-    [SerializeField] private Button eventoBTN1;
-    [SerializeField] private Button eventoBTN2;
-    [SerializeField] private Button eventoBTN3;
-    [SerializeField] private Button eventoBTN4;
+    //[SerializeField] private Button eventoBTN1;
+    //[SerializeField] private Button eventoBTN2;
+    //[SerializeField] private Button eventoBTN3;
+    //[SerializeField] private Button eventoBTN4;
     [SerializeField] private Slider sliderTemp;
     [SerializeField] private Slider sliderRadi;
 

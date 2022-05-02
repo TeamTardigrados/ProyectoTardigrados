@@ -25,7 +25,7 @@ public class Humedad2 : MonoBehaviour
         }
         if (sliderTemperatura.temperaturaActual >= 0.8f || sliderTemperatura.temperaturaActual<= 0.2f)
         {
-            humedad -= 4f * Time.deltaTime;
+            humedad -= 7f * Time.deltaTime;
         }
 
         estaditicaHumedad.text = ((int)humedad).ToString();

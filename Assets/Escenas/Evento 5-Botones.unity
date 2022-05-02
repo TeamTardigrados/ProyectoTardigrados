@@ -645,16 +645,16 @@ RectTransform:
   m_Children:
   - {fileID: 635680317}
   - {fileID: 1239309465}
-  - {fileID: 899653400}
   - {fileID: 1662662319}
+  - {fileID: 899653400}
   - {fileID: 668161798}
-  - {fileID: 1829597453}
   - {fileID: 845677218}
-  - {fileID: 1596158798}
+  - {fileID: 1829597453}
   - {fileID: 1002792356}
-  - {fileID: 134095203}
   - {fileID: 1037515744}
+  - {fileID: 1596158798}
   - {fileID: 1969603748}
+  - {fileID: 134095203}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1188,7 +1188,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 379425880}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1683,7 +1683,7 @@ RectTransform:
   m_Children:
   - {fileID: 1170670375}
   m_Father: {fileID: 379425880}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1815,7 +1815,7 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 379425880}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -2696,7 +2696,7 @@ RectTransform:
   m_LocalScale: {x: 0.6, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 379425880}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2771,11 +2771,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cac9e70ba34b044d9efc7cf031bd0b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventoBTN1: {fileID: 0}
-  eventoBTN2: {fileID: 0}
-  eventoBTN3: {fileID: 0}
-  eventoBTN4: {fileID: 0}
-  GoteroBTN: {fileID: 0}
+  GoteroBTN: {fileID: 1002792357}
   sliderTemp: {fileID: 1134757039}
   sliderRadi: {fileID: 668161800}
 --- !u!4 &1747946505
@@ -2804,11 +2800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ce0753f576dd54384b0e6ffd1780d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eventoBTN1: {fileID: 0}
-  eventoBTN2: {fileID: 0}
-  eventoBTN3: {fileID: 0}
-  eventoBTN4: {fileID: 0}
-  sliderTemp: {fileID: 0}
+  sliderTemp: {fileID: 1134757039}
   sliderRadi: {fileID: 668161800}
   FondoActual: {fileID: 891423126}
 --- !u!1001 &1829597452
@@ -3057,7 +3049,7 @@ RectTransform:
   m_Children:
   - {fileID: 423307694}
   m_Father: {fileID: 379425880}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
