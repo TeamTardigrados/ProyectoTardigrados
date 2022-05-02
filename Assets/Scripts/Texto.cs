@@ -13,6 +13,7 @@ public class Texto : MonoBehaviour
     [SerializeField] private int charsToPlays = 0;
     [SerializeField] private float typingTime = 0f;
     [SerializeField, TextArea(4, 6)] private string[] dialogueLines = null;
+    //[SerializeField, TextArea(4, 6)] private string[] dialogueLines2 = null;
     
     private bool didDialogueStart = false;
     private SoundManager soundManager;

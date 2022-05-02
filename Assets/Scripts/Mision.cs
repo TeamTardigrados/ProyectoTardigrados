@@ -48,11 +48,14 @@ public class Mision : MonoBehaviour
     public int contadorHidratacion = 0;
 
     [SerializeField] Button BtnContinuar;
-    
+    //Audio del juego 
+    //private SoundManager soundManager;
+
     void Start()
     {
         BtnContinuar.interactable = false;
     }
+
     void AbrirCuadroMisiones()
     {
         estaAbierto = true;
@@ -116,7 +119,7 @@ public class Mision : MonoBehaviour
                 temperaturaBajaTimer = 0;
             }
         }
-        if (contadorTemperaturaBaja == 3) mision1Cumplida.SetActive(true);
+        if (contadorTemperaturaBaja == 3) mision1Cumplida.SetActive(true); 
     }
     void TemperaturaCambiante()
     {
@@ -154,7 +157,7 @@ public class Mision : MonoBehaviour
                 }
             }
 
-            if (contadorHumedadAcabada == 2) mision3Cumplida.SetActive(true);         
+            if (contadorHumedadAcabada == 2) mision3Cumplida.SetActive(true); 
     }
     void HumedadCambiante()
     {
@@ -181,7 +184,7 @@ public class Mision : MonoBehaviour
                     criptobiosisTimer = 0;
                 }
             }
-            if (contadorHumedadAcabada == 2) mision4Cumplida.SetActive(true);
+            if (contadorHumedadAcabada == 2) mision4Cumplida.SetActive(true); 
         }
       
     }
