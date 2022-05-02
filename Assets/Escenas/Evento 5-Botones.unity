@@ -379,25 +379,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44bbb2c0a58946a4d8d1f3213d14b2d2, type: 3}
---- !u!114 &134095202 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 342054447504325479, guid: 44bbb2c0a58946a4d8d1f3213d14b2d2, type: 3}
-  m_PrefabInstance: {fileID: 134095201}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &134095203 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 342054447435987405, guid: 44bbb2c0a58946a4d8d1f3213d14b2d2, type: 3}
-  m_PrefabInstance: {fileID: 134095201}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &134095204 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 342054447435987402, guid: 44bbb2c0a58946a4d8d1f3213d14b2d2, type: 3}
   m_PrefabInstance: {fileID: 134095201}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &178619237
@@ -2532,8 +2516,6 @@ GameObject:
   - component: {fileID: 1575115715}
   - component: {fileID: 1575115714}
   - component: {fileID: 1575115713}
-  - component: {fileID: 1575115712}
-  - component: {fileID: 1575115716}
   m_Layer: 0
   m_Name: Tardigrado1
   m_TagString: Untagged
@@ -2541,20 +2523,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1575115712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575115711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d06c066401788145a0f07f2d7b59c70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interfazController: {fileID: 307039694}
-  humedad: {fileID: 0}
 --- !u!212 &1575115713
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2639,28 +2607,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1575115716
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1575115711}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b1b6646bc21dda46885ac2c595c2353, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueButton: {fileID: 1037515747}
-  dialoguePanel: {fileID: 134095204}
-  dialogueText: {fileID: 134095202}
-  dialogueLines:
-  - "\xBFSab\xEDas esto? \n\n\xA1Este peque\xF1o animalito es el \xFAnico capaz de
-    sobrevivir al vac\xEDo del espacio!"
-  - " Es verdaderamente una forma extraordinaria de vida\u2026"
-  - "Creo que es momento de volver,\n \xBFno crees? "
-  - "Antes de que le pase algo.\n...\nParece ser que tiene algo que decirte\u2026\n..."
-  - Gracias!!
 --- !u!224 &1596158798 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2662064313644352431, guid: 10fb4d694da1c3e4cb89c144f8feef1e, type: 3}
